@@ -41,7 +41,6 @@ and 25, or “Worker” if the age was between 26 and 66, or “Retired” if th
 Example output: (based on Tiago Murphy from above)
 Mr. Murphy, T
 College 
-
 *"@Author Jurijus Pacalovas";
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -69,18 +68,18 @@ import java.io.IOException;
 
 
 public class Ass1_ {
-    
-    
- 
- 
+
+
+
+
     public static void main(String[] args) {
-        
+
         //I have created the Ass1 main class.
         //I have created the myObj.x.
         MyAuthor myObjl = new MyAuthor();
         System.out.println(myObjl.x);//I have created classes and object with the author with my name of the Ass1 program.
-        
-       
+
+
   /*     Line 1 --- <firstname> <surname>
 Line 2 --- <age>
 Line 3 --- <gender>
@@ -91,24 +90,24 @@ Tiago Murphy
 23
 M
   */    
-        
+
         Scanner myKB = new Scanner(System.in);
-        
+
         checkpeople checkpeople = new checkpeople();
-        
-        
-        
+
+
+
         String MF;
-   
+
         boolean founded = false;
             System.out.println("Please enter your full name. ");
             checkpeople.x = myKB.nextLine();
-            
-                 
-            
+
+
+
        //note use of .equals() -- this is for an exact match
        // in many situations you might use .equalsIgnoreCase() instead
-       
+
   /*      
    Your task is to:
 1) Read the information and store it in appropriate variables in your program.
@@ -124,13 +123,13 @@ message that tells the user clearly why it is not valid.
 <title> <surname>, <first initial>
 <status>
 */
-       
+
            try {
       File myObj = new File("people.txt");
       Scanner myReader = new Scanner(myObj);
       while (myReader.hasNextLine()) {//I have created the loop while.
         String data = myReader.nextLine();//Here the program reads the people.txt file
-         
+
         if ( checkpeople.x.equals(data)){
             //got it right
             System.out.print(data);//Here the program show the data of the file.
@@ -140,54 +139,54 @@ message that tells the user clearly why it is not valid.
             MF=data1;
             if (MF.equals("MR")){
                       String filename = "output.txt"; //this is to store the name of my file rather than having to re-type it several times
-        
+
         //Step 1 -- you need a BufferedWriter and FileWriter
-        
+
         try {
-            
-        
+
+
             BufferedWriter myWriter = new BufferedWriter(new FileWriter(filename, true));
             //true = append to the file
             //false = overwrite the file
-            
+
             myWriter.write("MR, M"); //the write method will  write a STRING to the file
             myWriter.newLine();
-            
-            
-            
-            
+
+
+
+
             myWriter.close(); //IMPORTANT -- this saves changes  to the file
-            
+
         }
         catch(Exception e){
-            
+
             System.out.println("Error writing to file " +  filename);
              System.exit(0);
         }
             }
             else if (MF.equals("MS")){
                 String filename = "output.txt"; //this is to store the name of my file rather than having to re-type it several times
-        
+
         //Step 1 -- you need a BufferedWriter and FileWriter
-        
+
         try {
-            
-        
+
+
             BufferedWriter myWriter = new BufferedWriter(new FileWriter(filename, true));
             //true = append to the file
             //false = overwrite the file
-            
+
             myWriter.write("MS, F"); //the write method will  write a STRING to the file
             myWriter.newLine();
-            
-            
-            
-            
+
+
+
+
             myWriter.close(); //IMPORTANT -- this saves changes  to the file
-            
+
         }
         catch(Exception e){
-            
+
             System.out.println("Error writing to file " +  filename);
              System.exit(0);
         }
@@ -198,41 +197,41 @@ message that tells the user clearly why it is not valid.
                  System.exit(0);
 
              }
-              
+
             String data2 = myReader.nextLine();
             System.out.print(data2);
-          
+
             String age=data2;
             int i, i2=-1;
             int num;
            String age1;
-            
+
             //The program check numbers of years.
             for (i = 0; i < 101; i++) {
             age1=String.valueOf(i); //int to String
             if ( age.equals(age1)){ 
             i2=0;
-           
+
                     }
              if (i2==-1 && i==100)
             {
                i2=1; 
                if (i2==1)
-            { System.out.println("\nError this isn't a number.\n");
+            { System.out.println("\nError this isn't a number. Incorect the number of years. \n");
                  System.exit(0);
             }
                 }
             }
-            
-      
+
+
                 num = Integer.parseInt(age);   //String to int
-            
-            
-          
-            
-            
-            
-        
+
+
+
+
+
+
+
            System.out.println();
  /*           The status must be “School” if the age was 18 or less, or “College” if the age was between 19
 and 25, or “Worker” if the age was between 26 and 66, or “Retired” if the age is 67 or over.
@@ -240,34 +239,34 @@ Example output: (based on Tiago Murphy from above)
 Mr. Murphy, T
 College 
 */
- 
+
             String filename = "output.txt"; 
             if (num<0 || num>100)
             {System.out.println("Incorect the number of years. ");}
             else if (num>18)
             {
                //this is to store the name of my file rather than having to re-type it several times
-        
+
         //Step 1 -- you need a BufferedWriter and FileWriter
-        
+
         try {
-            
-        
+
+
             BufferedWriter myWriter = new BufferedWriter(new FileWriter(filename, true));
             //true = append to the file
             //false = overwrite the file
-            
+
             myWriter.write("Work"); //the write method will  write a STRING to the file
             myWriter.newLine();
-            
-            
-            
-            
+
+
+
+
             myWriter.close(); //IMPORTANT -- this saves changes  to the file
-            
+
         }
         catch(Exception e){
-            
+
             System.out.println("Error writing to file " +  filename);
              System.exit(0);
         } 
@@ -275,27 +274,27 @@ College
             else if (num<18)
             {
                String filename = "output.txt"; //this is to store the name of my file rather than having to re-type it several times
-        
+
         //Step 1 -- you need a BufferedWriter and FileWriter
-        
+
         try {
-            
-        
+
+
             BufferedWriter myWriter = new BufferedWriter(new FileWriter(filename, true));
             //true = append to the file
             //false = overwrite the file
-            
+
             myWriter.write("College"); //the write method will  write a STRING to the file
             myWriter.newLine();
-            
-            
-            
-            
+
+
+
+
             myWriter.close(); //IMPORTANT -- this saves changes  to the file
-            
+
         }
         catch(Exception e){
-            
+
             System.out.println("Error writing to file " +  filename);
              System.exit(0);
         } 
@@ -303,44 +302,44 @@ College
         else if (num>=67)
             {
                String filename = "output.txt"; //this is to store the name of my file rather than having to re-type it several times
-        
+
         //Step 1 -- you need a BufferedWriter and FileWriter
-        
+
         try {
-            
-        
+
+
             BufferedWriter myWriter = new BufferedWriter(new FileWriter(filename, true));
             //true = append to the file
             //false = overwrite the file
-            
+
             myWriter.write("Retired"); //the write method will  write a STRING to the file
             myWriter.newLine();
-            
-            
-            
-            
+
+
+
+
             myWriter.close(); //IMPORTANT -- this saves changes  to the file
-            
+
         }
         catch(Exception e){
-            
+
             System.out.println("Error writing to file " +  filename);
              System.exit(0);
         } 
-               
-    
+
+
             }
-                
-            
-            
-  
-           
+
+
+
+
+
             founded = true;
-             
+
         }
         else {
             //must have failed - ran out of attempts
-            
+
         }
       }
       myReader.close();
@@ -348,46 +347,44 @@ College
       System.out.println("An error occurred.");//Here the program has one catch where error that can show: The file doesn't exist.
        System.exit(0);
       e.printStackTrace();
-       
+
     }
     System.out.println();       
     System.out.println(founded);
     //The program check founded the name or not.
-    
-    
+
+
     if (founded){
         {
-            
-            
+
+
         //<surname>    
-    
-        
+
+
         String filename = "output.txt"; //this is to store the name of my file rather than having to re-type it several times
-        
+
         //Step 1 -- you need a BufferedWriter and FileWriter
-        
+
         try {
-            
-        
+
+
             BufferedWriter myWriter = new BufferedWriter(new FileWriter(filename, true));
             //true = append to the file
             //false = overwrite the file
-            
+
             myWriter.write(checkpeople.x); //the write method will  write a STRING to the file
-            
+
             myWriter.newLine();
-            
-            
+
+
             myWriter.close(); //IMPORTANT -- this saves changes  to the file
         }
         catch(Exception e){
-            
+
             System.out.println("Error writing to file " +  filename);
              System.exit(0);
 
         }
-        
-           
+
+
 }
-   
-    
