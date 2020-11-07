@@ -217,7 +217,7 @@ message that tells the user clearly why it is not valid.
             {
                i2=1; 
                if (i2==1)
-            { System.out.println("\nError this isn't a number. Incorect the number of years. \n");
+            { System.out.println("\nError this isn't a number or incorect the number of years. \n");
                  System.exit(0);
             }
                 }
@@ -241,9 +241,8 @@ College
 */
 
             String filename = "output.txt"; 
-            if (num<0 || num>100)
-            {System.out.println("Incorect the number of years. ");}
-            else if (num>18)
+          
+            if (num>18)
             {
                //this is to store the name of my file rather than having to re-type it several times
 
